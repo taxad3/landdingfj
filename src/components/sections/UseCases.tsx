@@ -1,10 +1,10 @@
-import { Wrench, Stethoscope, ShoppingBag, Home, Briefcase } from 'lucide-react';
+import { Wrench, Stethoscope, ShoppingBag, Home, Briefcase, TrendingUp } from 'lucide-react';
 import Section from '../ui/Section';
 import Card from '../ui/Card';
 import SectionTitle from '../ui/SectionTitle';
 import { USE_CASES } from '../../data/useCases';
 
-const icons = [Wrench, Stethoscope, ShoppingBag, Home, Briefcase];
+const icons = [Wrench, Stethoscope, ShoppingBag, Home, Briefcase, TrendingUp];
 
 export default function UseCases() {
   return (
