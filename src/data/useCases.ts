@@ -19,4 +19,8 @@ export const USE_CASES = [
     title: 'Agências e Operações',
     description: 'Gerencie múltiplos clientes com equipes dedicadas por conta.',
   },
+  {
+    title: 'Representantes Comerciais',
+    description: 'Qualifique oportunidades, organize prospecção e acompanhe ciclo de vendas.',
+  },
 ];

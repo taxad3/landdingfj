@@ -4,6 +4,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'secondary' | 'ghost';
   href?: string;
   target?: string;
+  onClick?: (e?: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>) => void;
 }
 
 export default function Button({
@@ -12,6 +13,7 @@ export default function Button({
   href,
   target,
   className = '',
+  onClick,
   ...props
 }: ButtonProps) {
   const baseStyles = 'px-6 py-3 rounded-lg font-semibold transition-all duration-300 inline-flex items-center justify-center gap-2';
@@ -26,14 +28,14 @@ export default function Button({
 
   if (href) {
     return (
-      <a href={href} target={target} className={classes}>
+      <a href={href} target={target} className={classes} onClick={onClick as any}>
         {children}
       </a>
     );
   }
 
   return (
-    <button className={classes} {...props}>
+    <button className={classes} onClick={onClick} {...props}>
       {children}
     </button>
   );

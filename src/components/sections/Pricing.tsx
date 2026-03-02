@@ -7,6 +7,12 @@ import { PLANS } from '../../data/plans';
 import { LINKS } from '../../config/links';
 
 export default function Pricing() {
+  const handleTalkToUs = (planName: string) => {
+    const message = `Oi, tenho interesse no plano ${planName}`;
+    const encodedMessage = encodeURIComponent(message);
+    window.open(`${LINKS.whatsapp}?text=${encodedMessage}`, '_blank');
+  };
+
   return (
     <Section id="planos" className="bg-slate-900/30">
       <SectionTitle subtitle="Escolha o plano ideal para sua operação">
@@ -67,14 +73,23 @@ export default function Pricing() {
               </ul>
             </div>
 
-            <Button
-              href={LINKS.app}
-              target="_blank"
-              variant={plan.recommended ? 'primary' : 'secondary'}
-              className="w-full"
-            >
-              Assinar agora
-            </Button>
+            <div className="flex flex-col gap-2">
+              <Button
+                href={LINKS.app}
+                target="_blank"
+                variant={plan.recommended ? 'primary' : 'secondary'}
+                className="w-full"
+              >
+                Assinar agora
+              </Button>
+              <Button
+                variant="ghost"
+                className="w-full text-xs"
+                onClick={() => handleTalkToUs(plan.name)}
+              >
+                Fale com a gente
+              </Button>
+            </div>
           </Card>
         ))}
       </div>

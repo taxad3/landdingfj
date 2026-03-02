@@ -4,6 +4,12 @@ import Badge from '../ui/Badge';
 import { LINKS } from '../../config/links';
 
 export default function Hero() {
+  const handleTalkToUs = () => {
+    const message = 'Oi, tenho interesse no RocketPost';
+    const encodedMessage = encodeURIComponent(message);
+    window.open(`${LINKS.whatsapp}?text=${encodedMessage}`, '_blank');
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center px-4 pt-24 pb-20 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-900/95 to-[#0b0f14]" />
@@ -47,8 +53,8 @@ export default function Hero() {
             <Rocket className="w-5 h-5" />
             Criar conta
           </Button>
-          <Button href="#planos" variant="secondary" className="text-lg px-8 py-4">
-            Ver planos
+          <Button variant="secondary" className="text-lg px-8 py-4" onClick={handleTalkToUs}>
+            Fale com a gente
           </Button>
         </div>
       </div>
